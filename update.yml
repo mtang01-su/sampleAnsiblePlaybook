@@ -1,0 +1,10 @@
+---
+- name: do multiple stuff
+  hosts: all
+  remote_user: root
+  tasks:
+    - name: get data on the server
+      shell: date
+      register: output
+    - name: "This is my hostname:"
+      debug: msg="{{ansible_hostname}}"
